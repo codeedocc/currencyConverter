@@ -1,9 +1,10 @@
 import React from 'react'
+import { Block } from './components/Block'
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="App">
+      <Block />
     </div>
   )
 }
