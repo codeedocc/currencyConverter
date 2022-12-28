@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Мой currency: {currency}</h1>
+      <Block />
       <Block />
     </div>
   )
