@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 interface IInitialState {
-  currency: number
+  primer: number
 }
 
 const initialState: IInitialState = {
-  currency: 0,
+  primer: 0,
 }
 
 export const currencySlice = createSlice({
   name: 'currency',
   initialState,
   reducers: {
-    setCurrency: (state, action) => {
-      state.currency = action.payload
+    setPrimer: (state, action) => {
+      state.primer = action.payload
     },
   },
 })

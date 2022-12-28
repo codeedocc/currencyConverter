@@ -2,11 +2,20 @@ import React from 'react'
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP']
 
-export const Block = () => (
+interface IBlock {
+  currency: string
+  onChangeCurrency: (cur: string) => void
+}
+
+export const Block = ({ currency, onChangeCurrency }: IBlock) => (
   <div className="block">
     <ul className="currencies">
       {defaultCurrencies.map((cur) => (
-        <li className={''} key={cur}>
+        <li
+          className={currency === cur ? 'active' : ''}
+          key={cur}
+          onClick={() => onChangeCurrency(cur)}
+        >
           {cur}
         </li>
       ))}

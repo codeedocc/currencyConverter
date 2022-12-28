@@ -12,7 +12,7 @@ export const currencyApi = createApi({
       query: () => ({
         url: `live`,
         params: {
-          apikey: 'WxBLM4InWJBYc52DCypIkNvnrBafPjA6',
+          apikey: process.env.REACT_APP_SECRET_KEY,
           source: 'USD',
         },
       }),
