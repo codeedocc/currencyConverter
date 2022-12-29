@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Block } from './components/Block'
 import { useActions } from './hooks/actions'
 import { useAppSelector } from './hooks/redux'
@@ -24,6 +24,14 @@ function App() {
     setFromPrice(result)
     setToPrice(val)
   }
+
+  useEffect(() => {
+    onChangeFromPrice(fromPrice)
+  }, [fromCurrency, fromPrice])
+
+  useEffect(() => {
+    onChangeToPrice(toPrice)
+  }, [toCurrency, toPrice])
 
   return (
     <div className="App">
