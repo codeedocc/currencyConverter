@@ -20,6 +20,8 @@ function App() {
   }
 
   const onChangeToPrice = (val: any) => {
+    const result = (data?.rates[fromCurrency] / data?.rates[toCurrency]) * val
+    setFromPrice(result)
     setToPrice(val)
   }
 
