@@ -4,16 +4,15 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const currencyApi = createApi({
   reducerPath: 'currency/api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.apilayer.com/currency_data/',
+    baseUrl: 'https://openexchangerates.org/api/',
   }),
   refetchOnFocus: true,
   endpoints: (build) => ({
-    searchCurrency: build.query<ServerResponce, string>({
+    searchCurrency: build.query({
       query: () => ({
-        url: `live`,
+        url: 'latest.json',
         params: {
-          apikey: process.env.REACT_APP_SECRET_KEY,
-          source: 'USD',
+          app_id: process.env.REACT_APP_SECRET_KEY,
         },
       }),
     }),

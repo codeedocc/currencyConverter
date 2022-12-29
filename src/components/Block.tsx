@@ -3,10 +3,10 @@ import React from 'react'
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP']
 
 interface IBlock {
-  currency: string
+  currency: string | number
   onChangeCurrency: (cur: string) => void
   value: number
-  onChangeValue: (val: number | string) => void
+  onChangeValue: (val: any) => void
 }
 
 export const Block = ({

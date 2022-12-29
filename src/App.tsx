@@ -7,16 +7,19 @@ import { useSearchCurrencyQuery } from './store/currency/currency.api'
 function App() {
   const [fromCurrency, setFromCurrency] = useState('RUB')
   const [toCurrency, setToCurrency] = useState('USD')
-  // const { isError, isLoading, data } = useSearchCurrencyQuery('')
+  const { isError, isLoading, data } = useSearchCurrencyQuery('')
 
   const { fromPrice, toPrice } = useAppSelector((state) => state.currency)
   const { setFromPrice, setToPrice } = useActions()
 
-  const onChangeFromPrice = (val: number | string) => {
+  const onChangeFromPrice = (val: any) => {
+    const price = val / data?.rates[fromCurrency]
+    const result = price * data?.rates[toCurrency]
+    setToPrice(result)
     setFromPrice(val)
   }
 
-  const onChangeToPrice = (val: number | string) => {
+  const onChangeToPrice = (val: any) => {
     setToPrice(val)
   }
 
