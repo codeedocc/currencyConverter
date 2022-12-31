@@ -5,7 +5,6 @@ export const currencyApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://openexchangerates.org/api/',
   }),
-  refetchOnFocus: true,
   endpoints: (build) => ({
     searchCurrency: build.query({
       query: () => ({

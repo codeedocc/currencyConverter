@@ -40,6 +40,7 @@ function App() {
         onChangeCurrency={(cur) => setFromCurrency(cur)}
         onChangeValue={onChangeFromPrice}
       />
+      &nbsp;
       <Block
         value={toPrice}
         currency={toCurrency}
